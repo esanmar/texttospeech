@@ -8,8 +8,8 @@ const languagesLoading=false;
 
 export default function TTS({text}) {
  
-  const [language, setLanguage] = useState('mr-IN');
-  const [name, setName] = useState('hi-IN-Standard-B');
+  const [language, setLanguage] = useState('eu-ES');
+  const [name, setName] = useState('eu-ES-Standard-B');
   const [audioUrl, setAudioUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [autoPlay, setAutoPlay] = useState(true);

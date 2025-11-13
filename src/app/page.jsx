@@ -2,23 +2,25 @@
 
 import { useState } from 'react';
 import 'regenerator-runtime/runtime'
-
-import SpeechToText from "./SpeechToText";
+import TTS from "./TTS";
 
 const Page = () => {
+    const [currentText, setCurrentText] = useState('');
+
     return (
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', padding: '20px' }}>
             <div>
-                <SpeechToText />
-            </div>
-            <div style={{ border: '1px solid red' }}>
-                <h1>Storage Area</h1>
+                <h1>Text to Speech - Euskera y Español</h1>
                 <textarea
-                    rows="5"
-                    cols="50"
-                    placeholder="Put you text here..."
+                    rows="10"
+                    cols="80"
+                    placeholder="Escribe tu texto aquí..."
+                    value={currentText}
+                    onChange={(e) => setCurrentText(e.target.value)}
+                    style={{ marginBottom: '20px', fontSize: '16px', padding: '10px' }}
                 />
             </div>
+            {currentText !== '' && <TTS text={currentText} />}
         </div>
     )
 }
